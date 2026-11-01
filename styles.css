@@ -1110,3 +1110,308 @@ img {
     padding: 32px 22px;
   }
 }
+
+/* ==========================================================================
+   GLOBAL SOURCING, STATS, COLD CHAIN & CLINICAL ACADEMY STYLES
+   ========================================================================== */
+
+/* Trust Stats Bar */
+.trust-stats-bar {
+  background: linear-gradient(180deg, #07162c 0%, #040d1a 100%);
+  border-bottom: 1px solid rgba(205, 163, 73, 0.25);
+  padding: 32px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 12px 18px;
+  border-right: 1px solid rgba(205, 163, 73, 0.18);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #cbd5e1;
+}
+
+/* Global Partners Countries Grid */
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.country-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  border: 1px solid var(--slate-200);
+  box-shadow: 0 10px 25px -8px rgba(7, 22, 44, 0.06);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.country-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(205, 163, 73, 0.5);
+  box-shadow: var(--shadow-lg);
+}
+
+.country-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.country-flag-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.country-flag-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.country-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy-900);
+}
+
+.country-status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(205, 163, 73, 0.12);
+  color: var(--gold-600);
+  border: 1px solid rgba(205, 163, 73, 0.35);
+}
+
+.country-focus {
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  margin-bottom: 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.country-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--slate-100);
+}
+
+.country-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--slate-100);
+  color: var(--slate-800);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Cold Chain & Logistics Grid */
+.logistics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.logistics-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(205, 163, 73, 0.24);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  transition: var(--transition);
+}
+
+.logistics-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--gold-400);
+  transform: translateY(-5px);
+}
+
+.logistics-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(205, 163, 73, 0.15);
+  border: 1px solid rgba(205, 163, 73, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-400);
+  margin-bottom: 20px;
+}
+
+.logistics-title {
+  font-size: 1.35rem;
+  color: var(--gold-300);
+  margin-bottom: 10px;
+}
+
+.logistics-desc {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Clinical Academy Section */
+.academy-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.academy-features {
+  display: grid;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.academy-feat-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--white);
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--slate-200);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.academy-feat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--navy-900);
+  color: var(--gold-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.academy-feat-text h4 {
+  font-size: 1.1rem;
+  color: var(--navy-900);
+  margin-bottom: 4px;
+}
+
+.academy-feat-text p {
+  font-size: 0.88rem;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+
+/* Global Manufacturer Partner CTA Box */
+.global-gateway-card {
+  background: radial-gradient(circle at 85% 30%, #15396b 0%, var(--navy-950) 80%);
+  border: 2px solid var(--gold-500);
+  border-radius: 28px;
+  padding: 56px 48px;
+  margin-top: 60px;
+  color: var(--white);
+  box-shadow: 0 25px 60px rgba(4, 13, 26, 0.45), 0 0 40px rgba(205, 163, 73, 0.15);
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.global-gateway-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.global-gateway-desc {
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.global-gateway-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.partner-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--gold-300);
+}
+
+.partner-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.partner-perk-item::before {
+  content: '✓';
+  color: var(--gold-400);
+  font-weight: 800;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(205, 163, 73, 0.18);
+    padding-bottom: 20px;
+  }
+  .countries-grid,
+  .logistics-grid,
+  .academy-grid,
+  .global-gateway-card {
+    grid-template-columns: 1fr;
+  }
+}

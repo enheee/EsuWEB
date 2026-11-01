@@ -1,89 +1,89 @@
 // ============================================================================
-// ХҮНДЭТ НОБИЛИС ХХК - Бүтээгдэхүүний жагсаалт (Эндээс бүтээгдэхүүнээ хялбар засна)
+// ХҮНДЭТ НОБИЛИС ХХК - Бүтээгдэхүүний жагсаалт
 // ============================================================================
 const PRODUCTS = [
   {
     id: 1,
-    category: 'devices',
-    badgeMn: 'Эмнэлгийн тоног төхөөрөмж',
-    badgeEn: 'Medical Devices',
-    titleMn: 'Олон үйлдэлт өвчтөний хяналтын монитор',
-    titleEn: 'Multi-Parameter Patient Monitor',
-    descMn: 'Эрчимт эмчилгээ болон мэс заслын тасагт зориулсан өндөр нарийвчлалтай, 15 инчийн мэдрэгчтэй дэлгэц бүхий хяналтын монитор.',
-    descEn: 'High-precision 15-inch touchscreen patient monitor designed for ICU and operating room environments.',
-    specs: ['ECG / SpO2 / NIBP', '15" HD Touch', 'CE / ISO 13485'],
-    statusMn: 'Захиалгаар болон бэлэн',
-    statusEn: 'In Stock & Pre-order',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80'
+    category: 'aesthetic',
+    badgeMn: 'Өмнөд Солонгос 🇰🇷 | KFDA',
+    badgeEn: 'South Korea 🇰🇷 | KFDA',
+    titleMn: 'Гиалуроны хүчлийн дээд зэрэглэлийн дермал филлер',
+    titleEn: 'Cross-linked Hyaluronic Acid Dermal Filler (Monophasic)',
+    descMn: 'Нүүрний хэлбэржүүлэлт, уруул болон гүн үрчлээ тэнийлгэх зориулалттай, удаан хугацааны хадгалалттай, өндөр цэвэршилттэй тарилгын филлер.',
+    descEn: 'Ultra-pure monophasic cross-linked HA filler engineered for smooth volumization, facial contouring, and deep wrinkle reduction.',
+    specs: ['Cross-linked HA 24mg/ml', 'Lidocaine 0.3%', 'KFDA / CE Certified'],
+    statusMn: 'Бэлэн нийлүүлэгдэнэ',
+    statusEn: 'In Stock & Ready to Deliver',
+    image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=900&q=80'
   },
   {
     id: 2,
     category: 'aesthetic',
-    badgeMn: 'Гоо сайхны бүтээгдэхүүн',
-    badgeEn: 'Aesthetic Products',
-    titleMn: 'Гиалуроны хүчлийн дермал филлер ба скинбүүстер',
-    titleEn: 'Hyaluronic Acid Dermal Filler & Skinbooster',
-    descMn: 'Арьсны гүн чийгшүүлэлт, залуужуулалт болон хэлбэржүүлэлтэд зориулсан клиникийн өндөр цэвэршилттэй тарилгын бүтээгдэхүүн.',
-    descEn: 'High-purity clinical cross-linked hyaluronic acid filler and skinbooster for facial contouring and deep hydration.',
-    specs: ['Cross-linked HA', '1.1ml x 2 Syringes', 'KFDA / CE Certified'],
-    statusMn: 'Бэлэн нийлүүлэгдэнэ',
-    statusEn: 'Available in Stock',
-    image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=900&q=80'
+    badgeMn: 'Өмнөд Солонгос 🇰🇷 | K-Aesthetics',
+    badgeEn: 'South Korea 🇰🇷 | K-Aesthetics',
+    titleMn: 'PDRN Полинуклеотид + Глутатион скинбүүстер',
+    titleEn: 'PDRN Salmon DNA Regenerative Skinbooster',
+    descMn: 'Арьсны эсийн ДНХ-г нөхөн сэргээх, нүхжилт агшаах, уян хатан чанарыг сэргээх эмнэлзүйн тарилгын скинбүүстер уусмал.',
+    descEn: 'Advanced salmon DNA polynucleotide regenerative complex for cellular matrix repair, tone brightening, and intense dermal elasticity.',
+    specs: ['PDRN 2% + Glutathione', '5 vials x 3ml', 'Эмнэлгийн зориулалттай'],
+    statusMn: 'Эрэлт ихтэй / Бэлэн',
+    statusEn: 'Top Seller / Available',
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80'
   },
   {
     id: 3,
     category: 'devices',
-    badgeMn: 'Эмнэлгийн тоног төхөөрөмж',
-    badgeEn: 'Medical Devices',
-    titleMn: 'Дижитал зөөврийн ЭХО оношилгооны аппарат',
-    titleEn: 'Portable Color Doppler Ultrasound System',
-    descMn: 'Дүрсний өндөр ялгарал, хиймэл оюунд суурилсан хэмжилтийн системтэй клиник оношилгооны ЭХО аппарат.',
-    descEn: 'Advanced color Doppler ultrasound imaging system with crystal-clear resolution and multi-probe support.',
-    specs: ['4D Doppler Imaging', '3 Probe Ports', 'DICOM 3.0'],
+    badgeMn: 'ХБНГУ 🇩🇪 | CE / ISO',
+    badgeEn: 'Germany 🇩🇪 | CE / ISO',
+    titleMn: 'Олон үйлдэлт өвчтөний хяналтын монитор (ICU)',
+    titleEn: 'Multi-Parameter Patient Monitor (Intensive Care)',
+    descMn: 'Эрчимт эмчилгээ, мэдээгүйжүүлэг болон мэс заслын тасагт зориулсан 15 инчийн HD мэдрэгчтэй дэлгэцтэй, өндөр нарийвчлалт монитор.',
+    descEn: 'High-precision 15-inch touchscreen patient monitor designed for ICU, anesthesia, and surgical suites with advanced arrhythmia detection.',
+    specs: ['ECG / SpO2 / NIBP / Temp', '15" HD Touch', 'CE / ISO 13485'],
     statusMn: 'Баталгаат хугацаа: 2 жил',
     statusEn: '2-Year Warranty',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80'
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80'
   },
   {
     id: 4,
     category: 'aesthetic',
-    badgeMn: 'Гоо сайхны бүтээгдэхүүн',
-    badgeEn: 'Aesthetic Products',
-    titleMn: 'RF Microneedling & Арьс чангалах лазер аппарат',
-    titleEn: 'Fractional RF Microneedling System',
-    descMn: 'Арьсны коллаген нөхөн төлжүүлэх, нүхжилт болон сорви багасгах, нүүр өргөж чангалах мэргэжлийн клиникийн төхөөрөмж.',
-    descEn: 'Professional clinical aesthetic device for collagen remodeling, scar reduction, and non-surgical skin tightening.',
-    specs: ['Gold Insulated Needles', '0.5mm - 3.5mm Depth', 'Сургалт дагалдана'],
+    badgeMn: 'Өмнөд Солонгос 🇰🇷 | K-Device',
+    badgeEn: 'South Korea 🇰🇷 | K-Device',
+    titleMn: 'Фракцийн RF Microneedling & Арьс чангалах систем',
+    titleEn: 'Fractional RF Microneedling & Skin Tightening System',
+    descMn: 'Арьсны гүн коллаген сэргээх, сорви нүхжилт арилгах, арьс татаж чангалах гоо сайхны эмнэлгүүдийн алтан стандарт төхөөрөмж.',
+    descEn: 'Medical aesthetic system delivering targeted radiofrequency energy to remodel collagen, reduce acne scars, and tighten lax skin.',
+    specs: ['Insulated Gold Needles', '0.5mm - 3.5mm Depth', 'Сургалт + Сертификат'],
     statusMn: 'Суурилуулалт + Сургалт',
-    statusEn: 'Installation + Training',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=80'
+    statusEn: 'Installation + Doctor Training',
+    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=900&q=80'
   },
   {
     id: 5,
     category: 'consumables',
-    badgeMn: 'Эмнэлгийн хэрэгсэл',
-    badgeEn: 'Medical Consumables',
-    titleMn: 'Мэс засал ба Тарилгын ариун нэг удаагийн хэрэгслүүд',
-    titleEn: 'Sterile Surgical & Aesthetic Consumables',
-    descMn: 'Эмнэлэг болон гоо сайхны клиникт өдөр тутам хэрэглэгдэх нано зүү, канюля, мэс заслын утас, ариун бээлий болон бусад хэрэгсэл.',
-    descEn: 'Premium sterile micro-cannulas, meso-needles, surgical sutures, and daily clinical consumables.',
-    specs: ['EO Sterile', 'Nano-thin Wall', 'Бөөний нийлүүлэлт'],
+    badgeMn: 'Япон 🇯🇵 | Sterile',
+    badgeEn: 'Japan 🇯🇵 | Sterile',
+    titleMn: 'Тарилгын хэт нарийн Нано зүү ба Микро канюля',
+    titleEn: 'Ultra-Fine Aesthetic Nano Needles & Flexible Cannulas',
+    descMn: 'Филлер болон скинбүүстер хийх үеийн өвдөлт, хөхрөлтийг 80% бууруулах зориулалттай эмнэлгийн зориулалтын уян канюлянууд.',
+    descEn: 'Premium Japanese engineered flexible micro-cannulas and nano-thin meso needles for painless injections and reduced bruising.',
+    specs: ['25G / 27G / 30G / 32G', 'EO Gas Sterile', 'Бөөний нийлүүлэлт'],
     statusMn: 'Бэлэн / Бөөний үнээр',
-    statusEn: 'Wholesale Available',
+    statusEn: 'Wholesale In Stock',
     image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=80'
   },
   {
     id: 6,
     category: 'consumables',
-    badgeMn: 'Лаборатори ба Ариутгал',
-    badgeEn: 'Sterilization & Lab',
-    titleMn: 'Автомат уурын автоклав (B ангилал)',
-    titleEn: 'Class-B Vacuum Steam Autoclave Sterilizer',
-    descMn: 'Эмнэлэг, шүд болон гоо сайхны клиникийн багаж хэрэгслийг 100% найдвартай ариутгах вакуум уурын автоклав.',
-    descEn: 'Medical-grade Class-B vacuum steam autoclave with digital thermal printer and rapid sterilization cycles.',
-    specs: ['23L / 45L Capacity', 'Triple Vacuum', 'LCD Smart Control'],
+    badgeMn: 'ХБНГУ 🇩🇪 | Class B',
+    badgeEn: 'Germany 🇩🇪 | Class B',
+    titleMn: 'Эмнэлгийн автомат вакуум уурын автоклав (Class B)',
+    titleEn: 'Class-B Medical Vacuum Steam Autoclave Sterilizer',
+    descMn: 'Эмнэлэг, мэс засал болон гоо заслын клиникийн бүх төрлийн багажийг 100% найдвартай ариутгах дижитал автоклав.',
+    descEn: 'European standard Class-B vacuum steam autoclave with digital thermal printer and rapid, validated sterilization cycles.',
+    specs: ['23L / 45L Chamber', 'Triple Pulsed Vacuum', 'LCD Smart Control'],
     statusMn: 'Бэлэн нийлүүлэгдэнэ',
-    statusEn: 'Available in Stock',
+    statusEn: 'Available for Delivery',
     image: 'https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=900&q=80'
   }
 ];
@@ -104,7 +104,7 @@ function renderProducts() {
     const title = currentLang === 'mn' ? item.titleMn : item.titleEn;
     const desc = currentLang === 'mn' ? item.descMn : item.descEn;
     const status = currentLang === 'mn' ? item.statusMn : item.statusEn;
-    const btnText = currentLang === 'mn' ? 'Үнийн санал авах' : 'Request Quote';
+    const btnText = currentLang === 'mn' ? 'Үнийн санал авах' : 'Request Quotation';
 
     return `
       <article class="product-card">
@@ -184,7 +184,7 @@ function handleContactSubmit(e) {
   const category = form.querySelector('[name="category"]').value;
   const message = form.querySelector('[name="message"]').value;
 
-  const subject = encodeURIComponent(`Хамтран ажиллах / Үнийн санал авах хүсэлт - ${name}`);
+  const subject = encodeURIComponent(`Хамтран ажиллах / Албан ёсны хүсэлт - ${name}`);
   const body = encodeURIComponent(
     `Нэр / Байгууллага: ${name}\nУтас: ${phone}\nСонирхож буй чиглэл: ${category}\n\nЗурвас:\n${message}`
   );
