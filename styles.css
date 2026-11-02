@@ -1067,8 +1067,44 @@ button, input, select, textarea {
   background: var(--bg-white);
 }
 
+.form-input.input-error {
+  border-color: #B42318;
+  background: #FFF9F8;
+}
+
 .honeypot-field {
   display: none !important;
+}
+
+.form-status-banner {
+  margin-top: 16px;
+  padding: 15px 18px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-alabaster);
+  color: var(--text-charcoal);
+}
+
+.form-status-banner.status-loading {
+  background: var(--status-eval-bg);
+  border-color: var(--champagne);
+  color: var(--text-charcoal);
+}
+
+.form-status-banner.status-success {
+  background: #EDF7F1;
+  border-color: #1F6E43;
+  border-left: 4px solid #1F6E43;
+  color: #13462A;
+}
+
+.form-status-banner.status-error {
+  background: #FDF2F2;
+  border-color: #C93B2B;
+  border-left: 4px solid #C93B2B;
+  color: #7A1C13;
 }
 
 /* ==========================================================================

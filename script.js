@@ -1000,20 +1000,33 @@ function renderBrandsPage() {
 
 /**
  * 5. Initialize B2B & Manufacturer Inquiry Forms across Contact & Partnership pages
- * Note: Uses client-side mailto dispatch + copyable summary fallback until a backend API is attached.
+ * Submits via POST /api/inquiry (Vercel Serverless Function + Resend Email API).
+ * Strictly reports real server acceptance or failure in MN / EN / KR.
  */
 function initB2BForms() {
   const params = new URLSearchParams(window.location.search);
   const preProduct = params.get("product");
   const preRef = params.get("ref");
+  const preType = params.get("type");
 
-  const refInput = document.getElementById("inquiryProductRef");
-  if (refInput && (preProduct || preRef)) {
-    refInput.value = `${preProduct || ""} (REF: ${preRef || ""})`.trim();
+  if (preProduct || preRef) {
+    const formattedRef = preRef ? `${preProduct || ""} (REF: ${preRef})`.trim() : String(preProduct).trim();
+    document.querySelectorAll("[name='productRef'], #inquiryProductRef").forEach((input) => {
+      input.value = formattedRef;
+    });
   }
 
   const tabs = document.querySelectorAll(".wf-tab");
   let activeType = "Manufacturer / Distributorship Proposal";
+
+  if (preType === "b2b" || preProduct) {
+    activeType = "Hospital / Clinic B2B Product Inquiry";
+    tabs.forEach((t) => {
+      const wf = t.getAttribute("data-wf-type");
+      t.classList.toggle("active", wf === activeType);
+    });
+  }
+
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       tabs.forEach((t) => t.classList.remove("active"));
@@ -1022,52 +1035,161 @@ function initB2BForms() {
     });
   });
 
+  const FORM_MESSAGES = {
+    mn: {
+      sending: "Таны хүсэлтийг сервер лүү илгээж байна, түр хүлээнэ үү...",
+      validationError: "Заавал бөглөх талбаруудыг үнэн зөв бөглөнө үү (Нэр, Байгууллага, И-мэйл, Утас, Улс, Ангилал болон Мессеж доод тал нь 10 тэмдэгт).",
+      successTitle: "Таны албан ёсны хүсэлтийг амжилттай хүлээн авлаа!",
+      successBody: "Манай Борлуулалтын алба таны илгээсэн мэдээлэлтэй танилцаад эргэн холбогдох болно.",
+      errorTitle: "Хүсэлт илгээхэд алдаа гарлаа:",
+      directFallback: `Та шууд холбогдох бол: <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;font-weight:600;">${COMPANY_CONFIG.email}</a> эсвэл <a href="tel:${COMPANY_CONFIG.phoneHref}" style="text-decoration:underline;font-weight:600;">${COMPANY_CONFIG.phoneDisplay}</a>.`
+    },
+    en: {
+      sending: "Submitting your official inquiry to our server, please wait...",
+      validationError: "Please fill in all required fields accurately (Name, Organization, valid Email, Phone, Country, Category, and Message of at least 10 characters).",
+      successTitle: "Your official B2B inquiry has been received!",
+      successBody: "Our Sales Director and B2B Desk have received your submission and will respond to your email shortly.",
+      errorTitle: "Unable to complete automatic submission:",
+      directFallback: `Direct contact: <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;font-weight:600;">${COMPANY_CONFIG.email}</a> or <a href="tel:${COMPANY_CONFIG.phoneHref}" style="text-decoration:underline;font-weight:600;">${COMPANY_CONFIG.phoneDisplay}</a>.`
+    },
+    kr: {
+      sending: "귀하의 공식 문의를 서버로 전송 중입니다. 잠시만 기다려 주십시오...",
+      validationError: "필수 항목(성함, 회사/기관명, 유효한 이메일, 연락처, 국가, 카테고리 및 10자 이상의 문의 내용)을 모두 정확히 입력해 주십시오.",
+      successTitle: "공식 B2B 및 파트너십 문의가 정상적으로 접수되었습니다!",
+      successBody: "보내주신 내용은 담당 부서로 전달되었으며 검토 후 입력하신 이메일로 신속히 회신드리겠습니다.",
+      errorTitle: "자동 접수 처리 중 오류가 발생했습니다:",
+      directFallback: `직통 연락처: <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;font-weight:600;">${COMPANY_CONFIG.email}</a> 또는 <a href="tel:${COMPANY_CONFIG.phoneHref}" style="text-decoration:underline;font-weight:600;">${COMPANY_CONFIG.phoneDisplay}</a>.`
+    }
+  };
+
   const forms = document.querySelectorAll(".b2b-verified-form");
   forms.forEach((form) => {
-    form.addEventListener("submit", (e) => {
+    form.querySelectorAll(".form-input").forEach((inp) => {
+      inp.addEventListener("input", () => inp.classList.remove("input-error"));
+    });
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // Anti-spam honeypot check
-      const trap = form.querySelector(".honeypot-input");
-      if (trap && trap.value.trim() !== "") return;
-
-      const name = (form.querySelector("[name='fullName']")?.value || "").trim();
-      const company = (form.querySelector("[name='companyName']")?.value || "").trim();
-      const email = (form.querySelector("[name='email']")?.value || "").trim();
-      const phone = (form.querySelector("[name='phone']")?.value || "").trim();
-      const country = (form.querySelector("[name='country']")?.value || "").trim();
-      const category = (form.querySelector("[name='category']")?.value || "").trim();
-      const prodRef = (form.querySelector("[name='productRef']")?.value || "").trim();
-      const message = (form.querySelector("[name='message']")?.value || "").trim();
-
-      if (!name || !company || !email || !message) return;
-
-      const subject = encodeURIComponent(`[B2B INQUIRY — ${activeType}] ${company} (${country})`);
-      const body = [
-        `Inquiry Classification: ${activeType}`,
-        `Company / Organization: ${company}`,
-        `Contact Person & Title: ${name}`,
-        `Official Email: ${email}`,
-        `Phone / Messenger: ${phone}`,
-        `Country / City: ${country}`,
-        `Category / Product Reference: ${category} ${prodRef ? "| " + prodRef : ""}`,
-        `--------------------------------------------------`,
-        `Message / Proposal Details:`,
-        message
-      ].join("\n");
-
+      const msgDict = FORM_MESSAGES[currentLang] || FORM_MESSAGES.en;
       const statusBox = form.querySelector(".form-status-banner");
-      if (statusBox) {
-        statusBox.style.display = "block";
-        statusBox.innerHTML =
-          currentLang === "mn"
-            ? `<strong>Анхаарна уу (И-мэйл программаар илгээх горим):</strong> Таны хүсэлтийн текстийг бэлтгэлээ. Таны төхөөрөмжийн и-мэйл программ нээгдэж <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;"><strong>${COMPANY_CONFIG.email}</strong></a> хаяг руу илгээхэд бэлэн боллоо.`
-            : currentLang === "kr"
-            ? `<strong>이메일 클라이언트 발송 안내:</strong> 작성하신 문의 내용이 준비되었습니다. 기본 이메일 앱을 통해 <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;"><strong>${COMPANY_CONFIG.email}</strong></a>로 직접 발송해 주십시오.`
-            : `<strong>Email Client Handoff Ready:</strong> Your inquiry text has been formatted. Opening your default mail application addressed to <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;"><strong>${COMPANY_CONFIG.email}</strong></a>.`;
+      const submitBtn = form.querySelector("button[type='submit']");
+
+      const hasTabs = form.parentElement?.querySelector(".wf-tab") !== null;
+      const inquiryType = hasTabs
+        ? activeType
+        : form.getAttribute("data-default-inquiry-type") || "Manufacturer / Distributorship Proposal";
+
+      const trap = form.querySelector(".honeypot-input");
+      const website = trap ? trap.value.trim() : "";
+
+      const fullNameEl = form.querySelector("[name='fullName']");
+      const companyNameEl = form.querySelector("[name='companyName']");
+      const emailEl = form.querySelector("[name='email']");
+      const phoneEl = form.querySelector("[name='phone']");
+      const countryEl = form.querySelector("[name='country']");
+      const categoryEl = form.querySelector("[name='category']");
+      const prodRefEl = form.querySelector("[name='productRef']");
+      const messageEl = form.querySelector("[name='message']");
+
+      const payload = {
+        inquiryType,
+        fullName: (fullNameEl?.value || "").trim(),
+        companyName: (companyNameEl?.value || "").trim(),
+        email: (emailEl?.value || "").trim(),
+        phone: (phoneEl?.value || "").trim(),
+        country: (countryEl?.value || "").trim(),
+        category: (categoryEl?.value || "").trim(),
+        productRef: (prodRefEl?.value || "").trim(),
+        message: (messageEl?.value || "").trim(),
+        website,
+        lang: currentLang
+      };
+
+      // Client-side validation highlight
+      const invalidEls = [];
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (payload.fullName.length < 2) invalidEls.push(fullNameEl);
+      if (payload.companyName.length < 2) invalidEls.push(companyNameEl);
+      if (!emailRegex.test(payload.email)) invalidEls.push(emailEl);
+      if (payload.phone.length < 5) invalidEls.push(phoneEl);
+      if (payload.country.length < 2) invalidEls.push(countryEl);
+      if (payload.category.length < 2) invalidEls.push(categoryEl);
+      if (payload.message.length < 10) invalidEls.push(messageEl);
+
+      if (invalidEls.length > 0) {
+        invalidEls.forEach((el) => el && el.classList.add("input-error"));
+        if (statusBox) {
+          statusBox.className = "form-status-banner status-error";
+          statusBox.style.display = "block";
+          statusBox.innerHTML = `<strong>${msgDict.errorTitle}</strong> ${msgDict.validationError}`;
+        }
+        return;
       }
 
-      window.location.href = `mailto:${COMPANY_CONFIG.email}?subject=${subject}&body=${encodeURIComponent(body)}`;
+      const originalBtnText = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = msgDict.sending;
+      }
+
+      if (statusBox) {
+        statusBox.className = "form-status-banner status-loading";
+        statusBox.style.display = "block";
+        statusBox.textContent = msgDict.sending;
+      }
+
+      try {
+        const res = await fetch("/api/inquiry", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await res.json().catch(() => null);
+
+        if (res.ok && result && result.ok === true) {
+          if (statusBox) {
+            statusBox.className = "form-status-banner status-success";
+            statusBox.style.display = "block";
+            statusBox.innerHTML = `<strong>${msgDict.successTitle}</strong><br />${msgDict.successBody}`;
+          }
+          form.reset();
+          if (countryEl && form.getAttribute("data-default-inquiry-type") && !hasTabs) {
+            countryEl.value = "South Korea";
+          }
+        } else {
+          if (result && Array.isArray(result.fields)) {
+            result.fields.forEach((fName) => {
+              const badEl = form.querySelector(`[name='${fName}']`);
+              if (badEl) badEl.classList.add("input-error");
+            });
+          }
+          const serverErrorMsg =
+            (result && result.message) ||
+            `HTTP ${res.status} — Server could not process the inquiry request.`;
+          if (statusBox) {
+            statusBox.className = "form-status-banner status-error";
+            statusBox.style.display = "block";
+            statusBox.innerHTML = `<strong>${msgDict.errorTitle}</strong> ${serverErrorMsg}<br /><span style="display:inline-block;margin-top:6px;">${msgDict.directFallback}</span>`;
+          }
+        }
+      } catch {
+        if (statusBox) {
+          statusBox.className = "form-status-banner status-error";
+          statusBox.style.display = "block";
+          statusBox.innerHTML = `<strong>${msgDict.errorTitle}</strong> Network or server connection unavailable.<br /><span style="display:inline-block;margin-top:6px;">${msgDict.directFallback}</span>`;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          const langAttr = submitBtn.getAttribute(`data-lang-${currentLang}`);
+          submitBtn.textContent = langAttr || originalBtnText;
+        }
+      }
     });
   });
 }

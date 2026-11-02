@@ -170,9 +170,9 @@
             </button>
           </div>
 
-          <form class="b2b-verified-form">
+          <form class="b2b-verified-form" data-default-inquiry-type="Manufacturer / Distributorship Proposal" novalidate>
             <div class="honeypot-field" aria-hidden="true">
-              <input type="text" class="honeypot-input" tabindex="-1" autocomplete="off" />
+              <input type="text" name="website" class="honeypot-input" tabindex="-1" autocomplete="off" />
             </div>
 
             <div class="form-row-2">
@@ -269,17 +269,14 @@
               type="submit"
               class="btn btn-primary"
               style="width: 100%;"
-              data-lang-mn="Албан ёсны хүсэлт бэлтгэж илгээх (Email Client)"
-              data-lang-en="Prepare &amp; Open Email Inquiry (Mailto)"
-              data-lang-kr="공식 문의 이메일 작성하기 (Mailto)"
+              data-lang-mn="Албан ёсны хүсэлт илгээх"
+              data-lang-en="Submit Official B2B Inquiry"
+              data-lang-kr="공식 B2B 문의 제출하기"
             >
-              Prepare &amp; Open Email Inquiry (Mailto)
+              Submit Official B2B Inquiry
             </button>
 
-            <div
-              class="form-status-banner"
-              style="display:none; margin-top:16px; padding:14px; background:var(--status-eval-bg); border:1px solid var(--champagne); font-size:0.85rem;"
-            ></div>
+            <div class="form-status-banner" role="status" aria-live="polite" style="display:none;"></div>
           </form>
         </div>
       </div>

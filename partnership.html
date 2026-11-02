@@ -223,9 +223,9 @@
             International Manufacturer Partnership Form
           </h3>
 
-          <form class="b2b-verified-form">
+          <form class="b2b-verified-form" data-default-inquiry-type="Manufacturer / Distributorship Proposal" novalidate>
             <div class="honeypot-field" aria-hidden="true">
-              <input type="text" class="honeypot-input" tabindex="-1" autocomplete="off" />
+              <input type="text" name="website" class="honeypot-input" tabindex="-1" autocomplete="off" />
             </div>
 
             <div class="form-row-2">
@@ -286,6 +286,19 @@
             </div>
 
             <div class="field-group">
+              <label data-lang-mn="Гол бүтээгдэхүүний нэр / Референс код (Заавал биш)" data-lang-en="Key Product Name / Reference Code (Optional)" data-lang-kr="주요 품목명 / 모델 코드 (선택사항)">Key Product Name / Reference Code (Optional)</label>
+              <input
+                type="text"
+                name="productRef"
+                class="form-input"
+                placeholder="e.g. PDO Thread Series, HA Filler 60cc, Surgical Consumables"
+                data-ph-mn="ж.нь: PDO утас, Филлэр, Эмнэлгийн боолт..."
+                data-ph-en="e.g. PDO Thread Series, HA Filler 60cc, Surgical Consumables"
+                data-ph-kr="예: PDO 리프팅 실, 필러 60cc, 의료용 소모품 등"
+              />
+            </div>
+
+            <div class="field-group">
               <label data-lang-mn="Бүтээгдэхүүний мэдээлэл ба Түншлэлийн санал *" data-lang-en="Product Lines, Certifications &amp; Partnership Proposal *" data-lang-kr="주요 제품군 및 파트너십 제안 내용 *">Product Lines, Certifications &amp; Partnership Proposal *</label>
               <textarea
                 name="message"
@@ -303,17 +316,14 @@
               type="submit"
               class="btn btn-primary"
               style="width: 100%;"
-              data-lang-mn="Түншлэлийн санал бэлтгэж илгээх (Email Client)"
-              data-lang-en="Prepare &amp; Open Email Inquiry (Mailto)"
-              data-lang-kr="공식 파트너십 제안 이메일 작성하기 (Mailto)"
+              data-lang-mn="Түншлэлийн санал илгээх"
+              data-lang-en="Submit Partnership Proposal"
+              data-lang-kr="파트너십 제안서 제출하기"
             >
-              Prepare &amp; Open Email Inquiry (Mailto)
+              Submit Partnership Proposal
             </button>
 
-            <div
-              class="form-status-banner"
-              style="display:none; margin-top:16px; padding:14px; background:var(--status-eval-bg); border:1px solid var(--champagne); font-size:0.85rem;"
-            ></div>
+            <div class="form-status-banner" role="status" aria-live="polite" style="display:none;"></div>
           </form>
         </div>
       </div>
