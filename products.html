@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products Catalog | KHUNDET NOBILIS LLC — 3M, TIME MACHINE, SEDY FILL</title>
+  <meta
+    name="description"
+    content="Searchable B2B medical supply and professional aesthetic product catalog of Khundet Nobilis LLC: 3M Micropore Surgical Tape (1533-1), TIME MACHINE PDO Thread, SEDY FILL 60cc."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="siteHeaderMount"></div>
+
+  <main>
+    <section class="page-hero">
+      <span
+        class="eyebrow"
+        data-lang-mn="БҮТЭЭГДЭХҮҮНИЙ КАТАЛОГ · MULTI-BRAND B2B PORTFOLIO"
+        data-lang-en="PRODUCT CATALOG · MULTI-BRAND B2B PORTFOLIO"
+        data-lang-kr="제품 카탈로그 · MULTI-BRAND B2B PORTFOLIO"
+      >
+        PRODUCT CATALOG · MULTI-BRAND B2B PORTFOLIO
+      </span>
+      <h1
+        class="page-hero-title"
+        data-lang-mn="Эмнэлгийн хэрэгсэл ба Мэргэжлийн гоо заслын каталог"
+        data-lang-en="Medical Consumables &amp; Professional Aesthetic Product Catalog"
+        data-lang-kr="의료용 소모품 및 프로페셔널 에스테틱 카탈로그"
+      </h1>
+      <p
+        class="page-hero-lead"
+        data-lang-mn="Бүтээгдэхүүний нэр, референс код (1533-1, 60cc), брэнд болон коммерциал төлөвөөр хайж шүүх боломжтой B2B каталог."
+        data-lang-en="Filter by brand, clinical category, reference code, or commercial verification status. Click any item to inspect full packaging photographs and technical specifications."
+        data-lang-kr="브랜드, 카테고리, 레퍼런스 코드(1533-1 등) 및 상업적 상태별로 검색·필터링할 수 있는 B2B 제품 카탈로그입니다."
+      >
+        Filter by brand, clinical category, reference code, or commercial verification status.
+      </p>
+    </section>
+
+    <section class="section-block bg-alabaster">
+      <!-- Commercial Status Transparency Notice -->
+      <div class="catalog-Verification-banner">
+        <div>
+          <strong
+            style="color: var(--text-charcoal); display: block; margin-bottom: 4px;"
+            data-lang-mn="КАТАЛОГИЙН МЭДЭЭЛЛИЙН ИЛ ТОД БАЙДАЛ (VERIFICATION NOTICE)"
+            data-lang-en="PORTFOLIO STATUS &amp; VERIFICATION DISCLOSURE"
+            data-lang-kr="포트폴리오 상태 구분 및 투명성 안내"
+          >
+            PORTFOLIO STATUS &amp; VERIFICATION DISCLOSURE
+          </strong>
+          <span
+            data-lang-mn="Бүтээгдэхүүн бүрийн карт дээр түүний коммерциал төлөв (Өмнө нь борлуулсан эсэх, Одоо бэлэн байгаа эсэх, Багцад судалж буй эсэх, эсвэл Цаашид татан авах эсэх)-ийг тодорхой зааглан тэмдэглэсэн болно."
+            data-lang-en="Each product entry explicitly distinguishes between verified sales/inventory status, candidates currently under evaluation, and categories planned for future sourcing."
+            data-lang-kr="각 품목은 '기판매 확인', '현재 공급 가능', '포트폴리오 검토 중(상세 이력 확인 대기)', '향후 소싱 예정'의 4단계 상태로 명확히 구분되어 표시됩니다."
+          >
+            Each product entry explicitly distinguishes between verified sales/inventory status, candidates currently under evaluation, and categories planned for future sourcing.
+          </span>
+        </div>
+        <span class="mono-code" id="catalogCountDisplay">Showing products</span>
+      </div>
+
+      <!-- Search & Filter Controls -->
+      <div class="catalog-controls-panel">
+        <div class="control-group">
+          <label
+            for="catalogSearchInput"
+            data-lang-mn="ХАЙЛТ (НЭР, КОД, БРЭНД)"
+            data-lang-en="SEARCH (NAME, REF CODE, BRAND)"
+            data-lang-kr="검색 (제품명, 모델명, 브랜드)"
+          >
+            SEARCH (NAME, REF CODE, BRAND)
+          </label>
+          <input
+            type="search"
+            id="catalogSearchInput"
+            class="catalog-input"
+            placeholder="e.g. 1533-1, 3M, PDO, Sedy Fill, 60cc..."
+          />
+        </div>
+
+        <div class="control-group">
+          <label
+            for="catalogBrandFilter"
+            data-lang-mn="БРЭНДЭЭР ШҮҮХ"
+            data-lang-en="FILTER BY BRAND"
+            data-lang-kr="브랜드별 필터"
+          >
+            FILTER BY BRAND
+          </label>
+          <select id="catalogBrandFilter" class="catalog-select">
+            <option value="all">All Brands (Бүх брэнд)</option>
+            <option value="3M">3M Health Care</option>
+            <option value="TIME MACHINE">TIME MACHINE (타임머신)</option>
+            <option value="SEDY FILL">SEDY FILL</option>
+            <option value="OPEN SOURCING">Open Sourcing Category</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label
+            for="catalogCategoryFilter"
+            data-lang-mn="АНГИЛЛААР ШҮҮХ"
+            data-lang-en="FILTER BY CATEGORY"
+            data-lang-kr="카테고리별 필터"
+          >
+            FILTER BY CATEGORY
+          </label>
+          <select id="catalogCategoryFilter" class="catalog-select">
+            <option value="all">All Categories (Бүх ангилал)</option>
+            <option value="medical-consumables">Medical Consumables</option>
+            <option value="aesthetic-threads">Professional Aesthetic Threads</option>
+            <option value="medical-aesthetics">Professional Medical Aesthetics</option>
+            <option value="skincare-postcare">Skincare &amp; Post-Procedure Care</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label
+            for="catalogStatusFilter"
+            data-lang-mn="ТӨЛӨВӨӨР ШҮҮХ"
+            data-lang-en="PRODUCT STATUS"
+            data-lang-kr="상업적 상태 필터"
+          >
+            PRODUCT STATUS
+          </label>
+          <select id="catalogStatusFilter" class="catalog-select">
+            <option value="all">All Statuses (Бүх төлөв)</option>
+            <option value="under_evaluation">Under Evaluation (Судалж буй)</option>
+            <option value="planned_sourcing">Planned for Future Sourcing</option>
+            <option value="currently_available_verified">Currently Available — Verified</option>
+            <option value="previously_sold_verified">Previously Sold — Verified</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Product Grid Mount -->
+      <div class="product-catalog-grid" id="catalogProductsGrid"></div>
+    </section>
+  </main>
+
+  <div id="siteFooterMount"></div>
+  <script src="script.js"></script>
+</body>
+</html>
