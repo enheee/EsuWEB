@@ -84,7 +84,10 @@
             type="search"
             id="catalogSearchInput"
             class="catalog-input"
-            placeholder="e.g. 1533-1, 3M, PDO, Sedy Fill, 60cc..."
+            placeholder="1533-1, 3M, PDO, Sedy Fill, 60cc..."
+            data-ph-mn="Жишээ нь: 1533-1, 3M, PDO, Sedy Fill, 60cc..."
+            data-ph-en="e.g. 1533-1, 3M, PDO, Sedy Fill, 60cc..."
+            data-ph-kr="예: 1533-1, 3M, PDO, Sedy Fill, 60cc..."
           />
         </div>
 
@@ -98,11 +101,10 @@
             FILTER BY BRAND
           </label>
           <select id="catalogBrandFilter" class="catalog-select">
-            <option value="all">All Brands (Бүх брэнд)</option>
-            <option value="3M">3M Health Care</option>
-            <option value="TIME MACHINE">TIME MACHINE (타임머신)</option>
-            <option value="SEDY FILL">SEDY FILL</option>
-            <option value="OPEN SOURCING">Open Sourcing Category</option>
+            <option value="all" data-lang-mn="Бүх брэнд" data-lang-en="All Brands" data-lang-kr="전체 브랜드">All Brands</option>
+            <option value="3M" data-lang-mn="3M Health Care" data-lang-en="3M Health Care" data-lang-kr="3M Health Care">3M Health Care</option>
+            <option value="TIME MACHINE" data-lang-mn="TIME MACHINE (타임머신)" data-lang-en="TIME MACHINE (타임머신)" data-lang-kr="TIME MACHINE (타임머신)">TIME MACHINE (타임머신)</option>
+            <option value="SEDY FILL" data-lang-mn="SEDY FILL" data-lang-en="SEDY FILL" data-lang-kr="SEDY FILL (세디 필)">SEDY FILL</option>
           </select>
         </div>
 
@@ -116,11 +118,10 @@
             FILTER BY CATEGORY
           </label>
           <select id="catalogCategoryFilter" class="catalog-select">
-            <option value="all">All Categories (Бүх ангилал)</option>
-            <option value="medical-consumables">Medical Consumables</option>
-            <option value="aesthetic-threads">Professional Aesthetic Threads</option>
-            <option value="medical-aesthetics">Professional Medical Aesthetics</option>
-            <option value="skincare-postcare">Skincare &amp; Post-Procedure Care</option>
+            <option value="all" data-lang-mn="Бүх ангилал" data-lang-en="All Categories" data-lang-kr="전체 카테고리">All Categories</option>
+            <option value="medical-consumables" data-lang-mn="Эмнэлгийн хэрэгсэл" data-lang-en="Medical Consumables" data-lang-kr="의료용 소모품">Medical Consumables</option>
+            <option value="aesthetic-threads" data-lang-mn="Мэргэжлийн PDO утас" data-lang-en="Professional Aesthetic Threads" data-lang-kr="프로페셔널 에스테틱 실">Professional Aesthetic Threads</option>
+            <option value="medical-aesthetics" data-lang-mn="Мэргэжлийн гоо засал" data-lang-en="Professional Medical Aesthetics" data-lang-kr="프로페셔널 메디컬 에스테틱">Professional Medical Aesthetics</option>
           </select>
         </div>
 
@@ -134,11 +135,11 @@
             PRODUCT STATUS
           </label>
           <select id="catalogStatusFilter" class="catalog-select">
-            <option value="all">All Statuses (Бүх төлөв)</option>
-            <option value="under_evaluation">Under Evaluation (Судалж буй)</option>
-            <option value="planned_sourcing">Planned for Future Sourcing</option>
-            <option value="currently_available_verified">Currently Available — Verified</option>
-            <option value="previously_sold_verified">Previously Sold — Verified</option>
+            <option value="all" data-lang-mn="Бүх төлөв" data-lang-en="All Statuses" data-lang-kr="전체 상태">All Statuses</option>
+            <option value="under_evaluation" data-lang-mn="Багцад судалж буй (Төлөв баталгаажуулагдаж буй)" data-lang-en="Under Evaluation (Pending Confirmation)" data-lang-kr="포트폴리오 검토 중 (이력 확인 대기)">Under Evaluation (Pending Confirmation)</option>
+            <option value="planned_sourcing" data-lang-mn="Цаашид татан авахаар төлөвлөж буй" data-lang-en="Planned for Future Sourcing" data-lang-kr="향후 소싱 예정">Planned for Future Sourcing</option>
+            <option value="currently_available_verified" data-lang-mn="Одоо бэлэн байгаа — Баталгаажсан" data-lang-en="Currently Available — Verified" data-lang-kr="현재 공급 가능 — 확인됨">Currently Available — Verified</option>
+            <option value="previously_sold_verified" data-lang-mn="Өмнө нь борлуулсан — Баталгаажсан" data-lang-en="Previously Sold — Verified" data-lang-kr="기판매 이력 — 확인됨">Previously Sold — Verified</option>
           </select>
         </div>
       </div>

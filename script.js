@@ -3,7 +3,8 @@
    Languages: Mongolian (MN), English (EN), Korean (KR)
    Safety & Truthfulness Policy:
    - Distinguishes verified pilot sales experience from pending SKU-level status.
-   - Uses actual supplied product photographs for 3M (1533-1), TIME MACHINE, SEDY FILL.
+   - Uses strictly the actual supplied product photographs for 3M (1533-1),
+     TIME MACHINE PDO Thread, and SEDY FILL 60cc.
    - Zero fabricated statistics, certifications, or exclusive distributor claims.
    ========================================================================== */
 
@@ -12,9 +13,9 @@ const COMPANY_CONFIG = {
   nameMn: "ХҮНДЭТ НОБИЛИС ХХК",
   tagline: "MEDICAL SUPPLY & AESTHETIC PRODUCT DISTRIBUTION",
   representative: {
-    mn: "Цогтжаргалын Эрхэмсайхан (Борлуулалтын захирал)",
-    en: "Erkhemsaikhan Tsogtjargal (Sales Director)",
-    kr: "초그트자르갈 에르헴사이한 (영업 이사 / Sales Director)"
+    mn: "Цогтжаргалын Эрхэмсайхан — Борлуулалтын захирал",
+    en: "Erkhemsaikhan Tsogtjargal — Sales Director",
+    kr: "초그트자르갈 에르헴사이한 — 영업 이사 (Sales Director)"
   },
   email: "erkhemsaikhan@khundet-nobilis.mn",
   phone: "+976 9196 0001",
@@ -71,17 +72,12 @@ const CATEGORY_LABELS = {
     mn: "Мэргэжлийн гоо заслын бүтээгдэхүүн",
     en: "Professional Medical Aesthetics",
     kr: "프로페셔널 메디컬 에스테틱"
-  },
-  "skincare-postcare": {
-    mn: "Арьс арчилгаа ба Процедурын дараах сэргээлт",
-    en: "Skincare & Post-Procedure Care",
-    kr: "더마 스킨케어 및 시술 후 케어"
   }
 };
 
 /**
  * Reusable Product Data Model (Section 5 Specification)
- * Uses actual uploaded photographs in assets/products/
+ * Contains strictly the 3 supplied product references with original photographs.
  */
 const PRODUCTS_CATALOG = [
   {
@@ -93,12 +89,12 @@ const PRODUCTS_CATALOG = [
     },
     brand: "3M",
     manufacturer: {
-      mn: "3M Health Care / ЗМ Korea Co., Ltd. (한국쓰리엠)",
+      mn: "3M Health Care / 3M Korea Co., Ltd. (한국쓰리엠)",
       en: "3M Health Care / 3M Korea Co., Ltd.",
       kr: "한국쓰리엠(주) / 3M Health Care"
     },
     countryOfOrigin: {
-      mn: "БНСУ / АНУ (Korea Label Supply)",
+      mn: "БНСУ / АНУ (3M Korea Supply)",
       en: "South Korea / USA (3M Korea Supply)",
       kr: "대한민국 / 미국 (원료공급원: 3M Health Care)"
     },
@@ -106,14 +102,14 @@ const PRODUCTS_CATALOG = [
     referenceCode: "1533-1",
     status: "under_evaluation",
     regulatoryStatus: {
-      mn: "БНСУ-ын шошго дээр '의약외품' (Эмнэлгийн парафармацевтик хэрэгсэл) ангилалтай. Монгол Улс дахь бүртгэл болон нийлүүлэгчийн зөвшөөрлийн төлөв баталгаажуулагдаж байна.",
-      en: "Labeled as Quasi-Drug (의약외품) on Korean packaging. Mongolian regulatory registration, supplier authorization, and inventory status are pending final verification.",
-      kr: "한국 패키지 기준 '의약외품' 표기 제품. 몽골 현지 인허가, 공식 공급 권한 및 재고 상태는 최종 확인 절차 중에 있습니다."
+      mn: "БНСУ-ын савлагаан дээр '의약외품' (Эмнэлгийн хэрэгсэл) ангилалтай. Түүхэн борлуулалт, одоогийн үлдэгдэл, нийлүүлэгчийн зөвшөөрөл болон Монгол Улс дахь бүртгэлийн төлөв баталгаажуулагдаж байна.",
+      en: "Labeled as Quasi-Drug (의약외품) on Korean packaging. Historical sales status, current inventory, supplier authorization, and local regulatory registration are pending confirmation before commercial claim publication.",
+      kr: "한국 패키지 기준 '의약외품' 표기 제품입니다. 기존 판매 이력, 현재 재고, 공급사 공식 권한 및 몽골 현지 인허가 상태는 최종 확인 절차 중에 있습니다."
     },
     description: {
       mn: "Эмнэлэг, мэс засал болон гоо сайхны клиникийн өдөр тутмын боолт, гуурс, боолтын материал тогтооход зориулагдсан амьсгалдаг, зөөлөн рейон нэхээсгүй (non-woven) арьсны өнгөтэй мэс заслын тууз.",
-      en: "Gentle, breathable, hypoallergenic rayon non-woven surgical tape in tan skin-tone finish, designed for securing dressings, tubing, and post-procedure bandages in hospitals and aesthetic clinics.",
-      kr: "병원, 외과 및 에스테틱 클리닉에서 드레싱 및 의료 기구 고정에 사용되는 저자극성 통기성 레이온 부직포 의료용 테이프(연갈색/탄)입니다."
+      en: "Gentle, breathable rayon non-woven surgical tape in tan skin-tone finish (REF 1533-1), used for securing dressings, tubing, and post-procedure bandages in hospitals and aesthetic clinics.",
+      kr: "병원, 외과 및 에스테틱 클리닉에서 드레싱 및 의료 기구 고정에 사용되는 저자극성 통기성 레이온 부직포 의료용 테이프(연갈색/탄, REF 1533-1)입니다."
     },
     packaging: {
       mn: "1 инч × 10 ярд (2.54 см × 9.14 м) | 12 ороомог / 1 хайрцаг, 10 хайрцаг / 1 кейс",
@@ -151,7 +147,7 @@ const PRODUCTS_CATALOG = [
     },
     brand: "TIME MACHINE",
     manufacturer: {
-      mn: "БНСУ-ын үйлдвэрлэгч (VC / дэлгэрэнгүй мэдээлэл баталгаажуулагдаж буй)",
+      mn: "БНСУ-ын үйлдвэрлэгч (VC тэмдэглэгээтэй — албан нэр баталгаажуулагдаж буй)",
       en: "South Korean Manufacturer (VC mark — full legal entity pending confirmation)",
       kr: "대한민국 제조사 (VC 마크 표기 — 상세 제조원 정보 확인 중)"
     },
@@ -161,12 +157,12 @@ const PRODUCTS_CATALOG = [
       kr: "대한민국 (South Korea)"
     },
     category: "aesthetic-threads",
-    referenceCode: "TM-PDO-SERIES",
+    referenceCode: "TM-PDO-THREAD",
     status: "under_evaluation",
     regulatoryStatus: {
-      mn: "Мэргэжлийн эмнэлэг, гоо сайхны клиникийн хэрэглээний бүтээгдэхүүн. Монгол дахь бүртгэл болон нийлүүлэлтийн төлөв баталгаажуулагдаж байна.",
-      en: "Professional clinical aesthetic thread candidate. Historical sales status, supplier authorization, and local regulatory registration are pending verification.",
-      kr: "전문 의료기관용 PDO 실 후보 품목. 판매 이력, 공급사 권한 및 현지 인허가 상태 확인 중입니다."
+      mn: "Мэргэжлийн эмнэлэг, гоо сайхны клиникийн багцад судалж буй бүтээгдэхүүн. Түүхэн борлуулалт, одоогийн үлдэгдэл, нийлүүлэгчийн зөвшөөрөл болон бүртгэлийн төлөв баталгаажуулагдаж байна.",
+      en: "Portfolio candidate for professional aesthetic clinics. Historical sales status, current inventory, supplier authorization, and regulatory registration are pending verification.",
+      kr: "전문 의료기관용 PDO 실 포트폴리오 후보 품목입니다. 기존 판매 이력, 재고 상태, 공급사 권한 및 현지 인허가 여부는 확인 절차 중에 있습니다."
     },
     description: {
       mn: "Арьс өргөх, чангалах болон контур засах мэргэжлийн гоо заслын ажилбарт зориулагдсан БНСУ-ын TIME MACHINE (타임머신) брэндийн PDO (Polydioxanone) шимэгддэг утас.",
@@ -174,7 +170,7 @@ const PRODUCTS_CATALOG = [
       kr: "전문 메디컬 에스테틱 클리닉의 리프팅 및 컨투어링 시술을 위해 설계된 타임머신(TIME MACHINE) 폴리디옥사논(PDO) 흡수성 봉합사 라인입니다."
     },
     packaging: {
-      mn: "Мэргэжлийн клиникийн хайрцагтай савлагаа (Утасны gauge/урт болон доторх тоо ширхэг баталгаажуулагдаж байна)",
+      mn: "Мэргэжлийн клиникийн хайрцагтай савлагаа (Утасны gauge/урт болон доторх тоо ширхэг баталгаажуулагдаж буй)",
       en: "Professional clinical box packaging (Exact needle gauge, thread length, and pouch count per box pending confirmation)",
       kr: "전문가용 박스 패키지 (세부 니들 게이지, 실 길이 및 박스당 포장 수량 확인 중)"
     },
@@ -184,6 +180,7 @@ const PRODUCTS_CATALOG = [
     specifications: [
       { label: { mn: "Бүтээгдэхүүний нэр", en: "Product Line", kr: "제품명" }, value: "TIME MACHINE PDO THREAD (타임머신)" },
       { label: { mn: "Утасны материал", en: "Thread Material", kr: "원재료" }, value: "PDO (Polydioxanone / 폴리디옥사논)" },
+      { label: { mn: "Ангилал", en: "Category", kr: "카테고리" }, value: "Professional Aesthetic Threads" },
       { label: { mn: "Зориулалт", en: "Intended Channel", kr: "공급 대상" }, value: "Licensed Aesthetic Clinics & Hospitals (전문 병원 및 클리닉)" },
       { label: { mn: "Хэмжээ / Спецификаци", en: "Gauge & Length Variants", kr: "세부 규격" }, value: "Pending SKU specification sheet confirmation" }
     ],
@@ -206,7 +203,7 @@ const PRODUCTS_CATALOG = [
     manufacturer: {
       mn: "БНСУ-ын үйлдвэрлэгч (Made in Korea — үйлдвэрлэгчийн албан нэр баталгаажуулагдаж буй)",
       en: "South Korean Manufacturer (Made in Korea — manufacturer entity pending confirmation)",
-      kr: "대한민국 제조 (Made in Korea — 상세 제조원 확인 중)"
+      kr: "대한민국 제조 (Made in Korea — 상세 제조원 법인명 확인 중)"
     },
     countryOfOrigin: {
       mn: "БНСУ (South Korea)",
@@ -217,9 +214,9 @@ const PRODUCTS_CATALOG = [
     referenceCode: "SEDY-60CC-24MG",
     status: "under_evaluation",
     regulatoryStatus: {
-      mn: "Эмнэлэг, гоо заслын төвүүдийн мэргэжлийн хэрэглээнд зориулсан бүтээгдэхүүн. Түүхэн борлуулалт, бэлэн үлдэгдэл болон бүртгэлийн статус баталгаажуулагдаж байна.",
-      en: "For professional aesthetic clinic & hospital evaluation. Historical sales record, current stock availability, and regulatory registration status are pending confirmation.",
-      kr: "전문 에스테틱 클리닉 및 병원용 후보 품목. 기존 판매 기록, 현재 재고 및 인허가 상태 확인 중입니다."
+      mn: "Эмнэлэг, гоо заслын төвүүдийн мэргэжлийн багцад судалж буй бүтээгдэхүүн. Түүхэн борлуулалт, одоогийн үлдэгдэл, нийлүүлэгчийн зөвшөөрөл болон бүртгэлийн статус баталгаажуулагдаж байна.",
+      en: "Portfolio candidate for aesthetic clinics and hospitals. Historical sales status, current stock availability, supplier authorization, and regulatory registration are pending confirmation.",
+      kr: "전문 에스테틱 클리닉 및 병원용 포트폴리오 후보 품목입니다. 기존 판매 기록, 현재 재고, 공급사 권한 및 인허가 상태는 확인 절차 중에 있습니다."
     },
     description: {
       mn: "Эмнэлэг болон мэргэжлийн гоо заслын төвүүдэд биеийн эзлэхүүн нөхөх, хэлбэржүүлэх зориулалттай 24 мг/сс концентраци бүхий 60 сс савлагаатай БНСУ-ын гиалуроны хүчлийн филлэр.",
@@ -234,7 +231,8 @@ const PRODUCTS_CATALOG = [
     images: [
       "assets/products/sedy-fill-60cc-box.jpg",
       "assets/products/sedy-fill-60cc-spec-panel.jpg",
-      "assets/products/sedy-fill-60cc-b2b-panel.jpg"
+      "assets/products/sedy-fill-60cc-b2b-panel.jpg",
+      "assets/products/sedy-fill-60cc-full-sheet.jpg"
     ],
     specifications: [
       { label: { mn: "Эзлэхүүн (Volume)", en: "Package Volume", kr: "용량 (Volume)" }, value: "60 cc (60 mL / 2.02 fl. oz.)" },
@@ -250,58 +248,6 @@ const PRODUCTS_CATALOG = [
     },
     inquiryAvailable: true,
     featured: true
-  },
-  {
-    id: "derma-pdrn-recovery-ampoule",
-    name: {
-      mn: "Мэргэжлийн PDRN ба Процедурын дараах сэргээх ампул (Төлөвлөгөөт ангилал)",
-      en: "Professional PDRN & Post-Procedure Recovery Ampoules (Planned Category)",
-      kr: "프로페셔널 PDRN & 시술 후 리커버리 앰플 (소싱 계획 카테고리)"
-    },
-    brand: "OPEN SOURCING",
-    manufacturer: {
-      mn: "БНСУ-ын дерма-гоо сайхны үйлдвэрлэгчидтэй хэлэлцээ хийхэд нээлттэй",
-      en: "Open for Korean Derma-Cosmetic Manufacturer Partnerships",
-      kr: "한국 더마·에스테틱 제조사 파트너십 소싱 오픈"
-    },
-    countryOfOrigin: {
-      mn: "БНСУ / Олон улс",
-      en: "South Korea / International",
-      kr: "대한민국 / 글로벌"
-    },
-    category: "skincare-postcare",
-    referenceCode: "CAT-PDRN-POST",
-    status: "planned_sourcing",
-    regulatoryStatus: {
-      mn: "Шинэ нийлүүлэгчийн сонгон шалгаруулалт ба багц тэлэлтийн шатанд яваа ангилал.",
-      en: "Category open for new international supplier onboarding and official distribution evaluation.",
-      kr: "신규 해외 공급사 발굴 및 공식 유통 협의를 위해 열려 있는 전략 카테고리입니다."
-    },
-    description: {
-      mn: "Гоо сайхны эмнэлэг болон салоны утас, филлэр, лазерын ажилбарын дараах арьс тайвшруулах, нөхөн төлжүүлэх зориулалттай ампул болон дерма-космецевтик бүтээгдэхүүний чиглэл.",
-      en: "Targeted portfolio category for soothing, barrier-repairing ampoules and derma-cosmetic regimens used after thread, filler, or laser treatments.",
-      kr: "실 리프팅, 필러, 레이저 등 에스테틱 시술 후 피부 진정과 재생을 돕는 전문가용 앰플 및 더마 코스메틱 소싱 카테고리입니다."
-    },
-    packaging: {
-      mn: "Салон болон клиникийн багц / Жижиглэнгийн савлагаа (Нийлүүлэгчийн стандартаар)",
-      en: "Clinical cabinet & home-care retail formats (Per manufacturer specification)",
-      kr: "클리닉 전문가용 및 홈케어 리테일 규격 (제조사 스펙 기준)"
-    },
-    images: [
-      "assets/product-pdrn-ampoule.jpg",
-      "assets/hero-serum-marble.jpg"
-    ],
-    specifications: [
-      { label: { mn: "Ангилал", en: "Category Focus", kr: "카테고리" }, value: "Post-Procedure Skincare & Derma Boosters" },
-      { label: { mn: "Статус", en: "Sourcing Status", kr: "소싱 상태" }, value: "Planned for Future Sourcing / Manufacturer Proposals Welcome" }
-    ],
-    datasheetNote: {
-      mn: "Энэ ангилалд бүтээгдэхүүн нийлүүлэх хүсэлтэй үйлдвэрлэгчид бидэнтэй холбогдоно уу",
-      en: "Manufacturers in this category are invited to submit partnership proposals",
-      kr: "해당 카테고리의 한국 제조사 파트너십 제안을 환영합니다"
-    },
-    inquiryAvailable: true,
-    featured: false
   }
 ];
 
@@ -311,59 +257,95 @@ const PRODUCTS_CATALOG = [
 const BRANDS_CATALOG = [
   {
     id: "brand-3m",
-    name: "3M Health Care (3M Korea Supply)",
+    name: {
+      mn: "3M Health Care (3M Korea Supply)",
+      en: "3M Health Care (3M Korea Supply)",
+      kr: "3M Health Care (한국쓰리엠 공급 라인)"
+    },
     origin: { mn: "БНСУ / АНУ", en: "South Korea / USA", kr: "대한민국 / 미국" },
     category: { mn: "Эмнэлгийн хэрэгсэл", en: "Medical Consumables", kr: "의료용 소모품" },
     statusKey: "under_evaluation",
-    highlightRef: "REF 1533-1 (Micropore™ Tan Surgical Tape)",
+    highlightRef: {
+      mn: "REF 1533-1 (Micropore™ Tan Surgical Tape)",
+      en: "REF 1533-1 (Micropore™ Tan Surgical Tape)",
+      kr: "REF 1533-1 (마이크로포™ 의료용 테이프 탄)"
+    },
     summary: {
       mn: "Эмнэлэг, мэс засал болон клиникийн өдөр тутмын хэрэглээний өндөр чанарын боолт, тууз болон эмнэлгийн туслах хэрэгслүүд.",
       en: "Global standard medical tapes and clinical consumables evaluated for wholesale supply to Mongolian hospitals and clinics.",
       kr: "몽골 병원 및 클리닉 도매 공급을 위해 검토 중인 글로벌 스탠다드 의료용 테이프 및 소모품 라인입니다."
     },
-    image: "assets/products/3m-micropore-1533-1-box.jpg"
+    image: "assets/products/3m-micropore-1533-1-box.jpg",
+    link: "product.html?id=3m-micropore-1533-1"
   },
   {
     id: "brand-time-machine",
-    name: "TIME MACHINE (타임머신)",
+    name: {
+      mn: "TIME MACHINE (타임머신)",
+      en: "TIME MACHINE (타임머신)",
+      kr: "TIME MACHINE (타임머신)"
+    },
     origin: { mn: "БНСУ (South Korea)", en: "South Korea", kr: "대한민국" },
     category: { mn: "Мэргэжлийн PDO утас", en: "Professional Aesthetic Threads", kr: "프로페셔널 PDO 리프팅 실" },
     statusKey: "under_evaluation",
-    highlightRef: "PDO Absorbable Thread Series",
+    highlightRef: {
+      mn: "PDO Absorbable Thread Series",
+      en: "PDO Absorbable Thread Series",
+      kr: "PDO 흡수성 봉합사 시리즈"
+    },
     summary: {
       mn: "Мэргэжлийн гоо сайхны эмнэлэг, клиникүүдэд зориулсан БНСУ-ын шимэгддэг PDO утасны бүтээгдэхүүн.",
       en: "Korean professional Polydioxanone (PDO) thread line targeted for licensed aesthetic practitioners in Ulaanbaatar.",
       kr: "울란바토르 내 전문 메디컬 에스테틱 클리닉을 대상으로 하는 한국산 PDO 리프팅 실 브랜드입니다."
     },
-    image: "assets/products/time-machine-pdo-thread-box.jpg"
+    image: "assets/products/time-machine-pdo-thread-box.jpg",
+    link: "product.html?id=time-machine-pdo-thread"
   },
   {
     id: "brand-sedy-fill",
-    name: "SEDY FILL",
+    name: {
+      mn: "SEDY FILL",
+      en: "SEDY FILL",
+      kr: "SEDY FILL (세디 필)"
+    },
     origin: { mn: "БНСУ (South Korea)", en: "South Korea", kr: "대한민국" },
     category: { mn: "Мэргэжлийн гоо засал (HA Filler)", en: "Professional Medical Aesthetics", kr: "프로페셔널 메디컬 에스테틱 (HA 필러)" },
     statusKey: "under_evaluation",
-    highlightRef: "SEDY FILL 60cc (24 mg/cc HA)",
+    highlightRef: {
+      mn: "SEDY FILL 60cc (24 mg/cc HA)",
+      en: "SEDY FILL 60cc (24 mg/cc HA)",
+      kr: "세디 필 60cc (24 mg/cc 히알루론산)"
+    },
     summary: {
       mn: "Эмнэлэг, гоо заслын төвүүдийн мэргэжлийн хэрэглээнд зориулсан 60cc савлагаатай гиалуроны хүчлийн биеийн филлэр.",
       en: "Korean 24 mg/cc Hyaluronic Acid body contouring filler in professional 60cc presentation for aesthetic clinics.",
       kr: "에스테틱 클리닉 및 병원 공급용 24 mg/cc 히알루론산 60cc 대용량 바디 필러 브랜드입니다."
     },
-    image: "assets/products/sedy-fill-60cc-box.jpg"
+    image: "assets/products/sedy-fill-60cc-box.jpg",
+    link: "product.html?id=sedy-fill-60cc"
   },
   {
     id: "brand-open-partner",
-    name: "Future Partner Brands (Open Onboarding)",
+    name: {
+      mn: "Шинэ брэндүүдийн нээлттэй хамтын ажиллагаа",
+      en: "Future Partner Brands (Open Onboarding)",
+      kr: "신규 글로벌 파트너 브랜드 (상시 온보딩)"
+    },
     origin: { mn: "БНСУ & Олон улс", en: "South Korea & Global", kr: "대한민국 및 글로벌 제조사" },
     category: { mn: "Эмнэлгийн хэрэгсэл, Гоо засал, Арьс арчилгаа", en: "Medical, Aesthetic & Derma-Cosmetics", kr: "의료소모품 · 에스테틱 · 더마코스메틱" },
     statusKey: "planned_sourcing",
-    highlightRef: "Official Distributorship & Market Entry",
+    highlightRef: {
+      mn: "Албан ёсны дистрибьюци ба Түншлэл",
+      en: "Official Distributorship & Market Entry",
+      kr: "공식 유통 및 몽골 시장 진입 파트너십"
+    },
     summary: {
       mn: "«Хүндэт Нобилис» ХХК нь зөвхөн нэг үйлдвэрлэгчээр хязгаарлагдахгүйгээр олон брэндийн эмнэлгийн болон гоо сайхны бүтээгдэхүүнийг Монголын зах зээлд нэвтрүүлэхээр нээлттэй хамтран ажиллаж байна.",
       en: "Khundet Nobilis LLC operates a multi-brand sourcing strategy and welcomes official distributorship discussions with reputable international manufacturers.",
       kr: "훈데트 노빌리스는 단일 브랜드에 국한되지 않는 멀티 브랜드 포트폴리오 전략을 추구하며, 유망 해외 제조사와의 공식 총판/유통 협의를 환영합니다."
     },
-    image: "assets/product-pdrn-ampoule.jpg"
+    image: "assets/logo.jpg",
+    link: "partnership.html"
   }
 ];
 
@@ -373,6 +355,8 @@ const BRANDS_CATALOG = [
 const UI_DICT = {
   mn: {
     topNoticeLeft: "ХҮНДЭТ НОБИЛИС ХХК — ЭМНЭЛГИЙН ХЭРЭГСЭЛ БА ГОО САЙХНЫ БҮТЭЭГДЭХҮҮН НИЙЛҮҮЛЭЛТ",
+    topProfileLink: "Компанийн танилцуулга PDF",
+    brandSubTitle: "ЭМНЭЛГИЙН ХЭРЭГСЭЛ БА ГОО ЗАСЛЫН ШИЙДЭЛ",
     navHome: "Нүүр",
     navAbout: "Бидний тухай",
     navProducts: "Бүтээгдэхүүн",
@@ -383,14 +367,23 @@ const UI_DICT = {
     navContact: "Холбоо барих",
     btnViewDetails: "Дэлгэрэнгүй",
     btnInquireB2B: "B2B үнийн санал",
+    btnBrandAction: "Дэлгэрэнгүй →",
     footerDesc: "Эмнэлгийн хэрэгсэл, мэргэжлийн гоо засал болон арьс арчилгааны олон улсын бүтээгдэхүүний судалгаа, B2B нийлүүлэлт, зах зээл хөгжүүлэлтийн компани.",
     footerNavHeading: "ҮНДСЭН ХУУДСУУД",
-    footerCatHeading: "БҮТЭЭГДЭХҮҮНИЙ АНГИЛАЛ",
+    footerCatHeading: "БҮТЭЭГДЭХҮҮНИЙ БАГЦ",
+    footerCat1: "3M Эмнэлгийн хэрэгсэл (REF 1533-1)",
+    footerCat2: "TIME MACHINE PDO Утас",
+    footerCat3: "SEDY FILL 60cc Биеийн филлэр",
+    footerCat4: "Компанийн танилцуулга (PDF)",
     footerContactHeading: "АЛБАН ЁСНЫ ХОЛБОО БАРИХ",
-    footerRights: "© 2026 KHUNDET NOBILIS LLC (Хүндэт Нобилис ХХК). Бүх эрх хуулиар хамгаалагдсан."
+    footerAddress: "Улаанбаатар хот, Хан-Уул дүүрэг, 17-р хороо, Монгол Улс",
+    footerRights: "© 2026 KHUNDET NOBILIS LLC (Хүндэт Нобилис ХХК). Бүх эрх хуулиар хамгаалагдсан.",
+    footerTagRight: "УЛААНБААТАР, МОНГОЛ УЛС · ОЛОН БРЭНДИЙН B2B НИЙЛҮҮЛЭЛТ"
   },
   en: {
     topNoticeLeft: "KHUNDET NOBILIS LLC — MULTI-BRAND MEDICAL SUPPLY & AESTHETIC PRODUCT DISTRIBUTION",
+    topProfileLink: "Company Profile PDF",
+    brandSubTitle: "MEDICAL SUPPLY & AESTHETIC SOLUTIONS",
     navHome: "Home",
     navAbout: "About Us",
     navProducts: "Products",
@@ -401,14 +394,23 @@ const UI_DICT = {
     navContact: "Contact",
     btnViewDetails: "Specifications",
     btnInquireB2B: "B2B Inquiry",
+    btnBrandAction: "View Details →",
     footerDesc: "Mongolia-based multi-brand medical supply, professional aesthetic, and skincare product sourcing and B2B distribution development company.",
     footerNavHeading: "CORPORATE PAGES",
-    footerCatHeading: "PORTFOLIO CATEGORIES",
+    footerCatHeading: "PORTFOLIO REFERENCES",
+    footerCat1: "3M Medical Consumables (REF 1533-1)",
+    footerCat2: "TIME MACHINE PDO Threads",
+    footerCat3: "SEDY FILL 60cc Medical Aesthetics",
+    footerCat4: "Company Profile (PDF)",
     footerContactHeading: "VERIFIED CORPORATE OFFICE",
-    footerRights: "© 2026 KHUNDET NOBILIS LLC. All Rights Reserved."
+    footerAddress: "17th Khoroo, Khan-Uul District, Ulaanbaatar, Mongolia",
+    footerRights: "© 2026 KHUNDET NOBILIS LLC. All Rights Reserved.",
+    footerTagRight: "ULAANBAATAR, MONGOLIA · MULTI-BRAND MEDICAL & AESTHETIC SOURCING"
   },
   kr: {
     topNoticeLeft: "KHUNDET NOBILIS LLC — 멀티 브랜드 의료용 소모품 및 메디컬 에스테틱 유통",
+    topProfileLink: "회사 소개서 PDF",
+    brandSubTitle: "의료용 소모품 및 메디컬 에스테틱 솔루션",
     navHome: "홈",
     navAbout: "회사 소개",
     navProducts: "제품 카탈로그",
@@ -419,11 +421,18 @@ const UI_DICT = {
     navContact: "문의하기",
     btnViewDetails: "상세 규격 보기",
     btnInquireB2B: "B2B/공급 문의",
+    btnBrandAction: "상세 보기 →",
     footerDesc: "몽골 울란바토르 기반의 의료용 소모품, 프로페셔널 에스테틱 및 스킨케어 멀티 브랜드 소싱·B2B 유통 개발 전문 기업입니다.",
     footerNavHeading: "주요 페이지",
-    footerCatHeading: "제품 카테고리",
+    footerCatHeading: "포트폴리오 품목",
+    footerCat1: "3M 의료용 소모품 (REF 1533-1)",
+    footerCat2: "TIME MACHINE PDO 리프팅 실",
+    footerCat3: "SEDY FILL 60cc 바디 필러",
+    footerCat4: "회사 소개서 브리프 (PDF)",
     footerContactHeading: "공식 연락처",
-    footerRights: "© 2026 KHUNDET NOBILIS LLC (훈데트 노빌리스). All Rights Reserved."
+    footerAddress: "몽골 울란바토르 항울구 17동 (Khan-Uul District, Ulaanbaatar)",
+    footerRights: "© 2026 KHUNDET NOBILIS LLC (훈데트 노빌리스). All Rights Reserved.",
+    footerTagRight: "몽골 울란바토르 · 멀티 브랜드 의료·에스테틱 소싱"
   }
 };
 
@@ -467,6 +476,12 @@ function setLanguage(lang) {
     }
   });
 
+  // Translate input/textarea placeholders with data-ph-mn / data-ph-en / data-ph-kr
+  document.querySelectorAll("[data-ph-mn]").forEach((el) => {
+    const ph = el.getAttribute(`data-ph-${lang}`) || el.getAttribute("data-ph-en");
+    if (ph) el.setAttribute("placeholder", ph);
+  });
+
   // Translate shared UI_DICT keys
   const dict = UI_DICT[lang];
   document.querySelectorAll("[data-ui]").forEach((el) => {
@@ -500,7 +515,7 @@ function initSharedChrome() {
             <span>|</span>
             <a href="tel:+97691960001">${COMPANY_CONFIG.phone}</a>
             <span>|</span>
-            <a href="company-profile.html" target="_blank" rel="noopener">Company Profile PDF</a>
+            <a href="company-profile.html" target="_blank" rel="noopener" data-ui="topProfileLink">Company Profile PDF</a>
           </div>
         </div>
       </div>
@@ -510,7 +525,7 @@ function initSharedChrome() {
             <img src="assets/logo.jpg" alt="Khundet Nobilis LLC Logo" class="brand-logo-thumb" />
             <div class="brand-titles">
               <span class="brand-main">KHUNDET NOBILIS</span>
-              <span class="brand-sub">MEDICAL SUPPLY &amp; AESTHETIC SOLUTIONS</span>
+              <span class="brand-sub" data-ui="brandSubTitle">MEDICAL SUPPLY &amp; AESTHETIC SOLUTIONS</span>
             </div>
           </a>
 
@@ -549,7 +564,7 @@ function initSharedChrome() {
                 <img src="assets/logo.jpg" alt="Khundet Nobilis Logo" class="brand-logo-thumb" />
                 <div class="brand-titles">
                   <span class="brand-main" style="color: var(--bg-alabaster);">KHUNDET NOBILIS</span>
-                  <span class="brand-sub" style="color: var(--champagne-light);">MEDICAL &amp; AESTHETIC DISTRIBUTION</span>
+                  <span class="brand-sub" style="color: var(--champagne-light);" data-ui="brandSubTitle">MEDICAL &amp; AESTHETIC DISTRIBUTION</span>
                 </div>
               </div>
               <p style="font-size: 0.86rem; color: #C7C2B8; max-width: 340px; line-height: 1.68;" data-ui="footerDesc"></p>
@@ -570,13 +585,12 @@ function initSharedChrome() {
             </div>
 
             <div>
-              <h4 class="footer-heading" data-ui="footerCatHeading">PORTFOLIO CATEGORIES</h4>
+              <h4 class="footer-heading" data-ui="footerCatHeading">PORTFOLIO REFERENCES</h4>
               <ul class="footer-nav-list">
-                <li><a href="products.html?category=medical-consumables">3M Medical Consumables</a></li>
-                <li><a href="products.html?category=aesthetic-threads">TIME MACHINE PDO Threads</a></li>
-                <li><a href="products.html?category=medical-aesthetics">SEDY FILL Medical Aesthetics</a></li>
-                <li><a href="products.html?category=skincare-postcare">Post-Procedure Skincare</a></li>
-                <li><a href="company-profile.html" target="_blank" rel="noopener">Company Profile (PDF)</a></li>
+                <li><a href="product.html?id=3m-micropore-1533-1" data-ui="footerCat1">3M Medical Consumables (REF 1533-1)</a></li>
+                <li><a href="product.html?id=time-machine-pdo-thread" data-ui="footerCat2">TIME MACHINE PDO Threads</a></li>
+                <li><a href="product.html?id=sedy-fill-60cc" data-ui="footerCat3">SEDY FILL 60cc Medical Aesthetics</a></li>
+                <li><a href="company-profile.html" target="_blank" rel="noopener" data-ui="footerCat4">Company Profile (PDF)</a></li>
               </ul>
             </div>
 
@@ -584,7 +598,7 @@ function initSharedChrome() {
               <h4 class="footer-heading" data-ui="footerContactHeading">VERIFIED CORPORATE OFFICE</h4>
               <ul class="footer-nav-list">
                 <li><strong style="color: var(--bg-white);">${COMPANY_CONFIG.name}</strong></li>
-                <li>Khan-Uul District, 17th Khoroo, Ulaanbaatar, Mongolia</li>
+                <li data-ui="footerAddress">17th Khoroo, Khan-Uul District, Ulaanbaatar, Mongolia</li>
                 <li><a href="mailto:${COMPANY_CONFIG.email}">${COMPANY_CONFIG.email}</a></li>
                 <li><a href="tel:+97691960001">${COMPANY_CONFIG.phone}</a></li>
                 <li><a href="https://khundet-nobilis.mn">www.khundet-nobilis.mn</a></li>
@@ -594,7 +608,7 @@ function initSharedChrome() {
 
           <div class="footer-bottom-row">
             <span data-ui="footerRights">© 2026 KHUNDET NOBILIS LLC. All Rights Reserved.</span>
-            <span>ULAANBAATAR, MONGOLIA · MULTI-BRAND MEDICAL &amp; AESTHETIC SOURCING</span>
+            <span data-ui="footerTagRight">ULAANBAATAR, MONGOLIA · MULTI-BRAND MEDICAL &amp; AESTHETIC SOURCING</span>
           </div>
         </div>
       </footer>
@@ -719,23 +733,29 @@ function renderCatalogPage() {
   if (countEl) {
     countEl.textContent =
       currentLang === "mn"
-        ? `Нийт ${filtered.length} бүтээгдэхүүн илэрлээ`
+        ? `Нийт ${filtered.length} бүтээгдэхүүн`
         : currentLang === "kr"
-        ? `총 ${filtered.length}개 제품 표시 중`
+        ? `총 ${filtered.length}개 품목 표시 중`
         : `Showing ${filtered.length} product(s)`;
   }
 
   if (filtered.length === 0) {
     const emptyMsg =
       currentLang === "mn"
-        ? "Таны хайсан шүүлтүүрт тохирох бүтээгдэхүүн олдсонгүй. Шүүлтүүрээ цэвэрлэж дахин үзнэ үү."
+        ? "Таны сонгосон шүүлтүүрт тохирох бүтээгдэхүүн олдсонгүй. Шүүлтүүрээ цэвэрлэж дахин үзнэ үү."
         : currentLang === "kr"
-        ? "검색 조건에 일치하는 제품이 없습니다. 필터를 초기화해 주세요."
-        : "No products matched your selected filters. Please reset filters or submit a direct B2B sourcing inquiry.";
+        ? "선택하신 조건에 해당하는 품목이 없습니다. 필터를 초기화해 주세요."
+        : "No products matched your selected filters. Please reset filters or submit a direct B2B inquiry.";
+    const resetLabel =
+      currentLang === "mn"
+        ? "Шүүлтүүр цэвэрлэх"
+        : currentLang === "kr"
+        ? "필터 초기화"
+        : "Reset Filters";
     grid.innerHTML = `
       <div style="grid-column: 1 / -1; background: var(--bg-white); border: 1px solid var(--line-hairline); padding: 48px; text-align: center;">
         <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 18px;">${emptyMsg}</p>
-        <button type="button" class="btn btn-outline btn-sm" onclick="resetCatalogFilters()">Reset Filters</button>
+        <button type="button" class="btn btn-outline btn-sm" onclick="resetCatalogFilters()">${resetLabel}</button>
       </div>
     `;
     return;
@@ -748,7 +768,6 @@ function initCatalogFilters() {
   const grid = document.getElementById("catalogProductsGrid");
   if (!grid) return;
 
-  // Apply URL query parameters if present (?category=... or ?brand=...)
   const params = new URLSearchParams(window.location.search);
   const urlCat = params.get("category");
   const urlBrand = params.get("brand");
@@ -950,27 +969,28 @@ window.switchPdpImage = function (src, btnEl) {
 function renderBrandsPage() {
   const mount = document.getElementById("brandsDirectoryGrid");
   if (!mount) return;
+  const dict = UI_DICT[currentLang];
 
   mount.innerHTML = BRANDS_CATALOG.map((b) => {
     const st = PRODUCT_STATUS_LABELS[b.statusKey];
     return `
       <article class="corporate-card" style="padding: 0; overflow: hidden;">
-        <div style="height: 230px; background: var(--bg-sand); border-bottom: 1px solid var(--line-hairline); overflow: hidden;">
-          <img src="${b.image}" alt="${b.name}" style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+        <div style="height: 240px; background: var(--bg-sand); border-bottom: 1px solid var(--line-hairline); overflow: hidden;">
+          <img src="${b.image}" alt="${b.name[currentLang]}" style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
         </div>
         <div style="padding: 28px;">
           <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
             <span class="eyebrow">${b.category[currentLang]}</span>
             <span class="mono-code">${b.origin[currentLang]}</span>
           </div>
-          <h3 class="card-title" style="margin-bottom: 10px;">${b.name}</h3>
+          <h3 class="card-title" style="margin-bottom: 10px;">${b.name[currentLang]}</h3>
           <div style="margin-bottom: 14px;">
             <span class="status-badge ${b.statusKey}">${st[currentLang]}</span>
           </div>
           <p class="card-text" style="margin-bottom: 18px;">${b.summary[currentLang]}</p>
           <div style="border-top: 1px solid var(--line-hairline); padding-top: 14px; display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:0.78rem; color:var(--text-muted); font-weight:600;">${b.highlightRef}</span>
-            <a href="products.html" class="btn btn-outline btn-sm">Catalog →</a>
+            <span style="font-size:0.78rem; color:var(--text-muted); font-weight:600;">${b.highlightRef[currentLang]}</span>
+            <a href="${b.link}" class="btn btn-outline btn-sm">${dict.btnBrandAction}</a>
           </div>
         </div>
       </article>
@@ -980,9 +1000,9 @@ function renderBrandsPage() {
 
 /**
  * 5. Initialize B2B & Manufacturer Inquiry Forms across Contact & Partnership pages
+ * Note: Uses client-side mailto dispatch + copyable summary fallback until a backend API is attached.
  */
 function initB2BForms() {
-  // Pre-fill product reference if navigated from a product card
   const params = new URLSearchParams(window.location.search);
   const preProduct = params.get("product");
   const preRef = params.get("ref");
@@ -992,7 +1012,6 @@ function initB2BForms() {
     refInput.value = `${preProduct || ""} (REF: ${preRef || ""})`.trim();
   }
 
-  // Workflow tabs if present
   const tabs = document.querySelectorAll(".wf-tab");
   let activeType = "Manufacturer / Distributorship Proposal";
   tabs.forEach((tab) => {
@@ -1042,10 +1061,10 @@ function initB2BForms() {
         statusBox.style.display = "block";
         statusBox.innerHTML =
           currentLang === "mn"
-            ? `Таны албан ёсны хүсэлтийг бэлтгэлээ. И-мэйл программаар <strong>${COMPANY_CONFIG.email}</strong> хаяг руу илгээгдэнэ.`
+            ? `<strong>Анхаарна уу (И-мэйл программаар илгээх горим):</strong> Таны хүсэлтийн текстийг бэлтгэлээ. Таны төхөөрөмжийн и-мэйл программ нээгдэж <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;"><strong>${COMPANY_CONFIG.email}</strong></a> хаяг руу илгээхэд бэлэн боллоо.`
             : currentLang === "kr"
-            ? `문의 내용이 준비되었습니다. 이메일 클라이언트를 통해 <strong>${COMPANY_CONFIG.email}</strong>로 발송됩니다.`
-            : `Your official inquiry is ready. Opening your email client addressed to <strong>${COMPANY_CONFIG.email}</strong>.`;
+            ? `<strong>이메일 클라이언트 발송 안내:</strong> 작성하신 문의 내용이 준비되었습니다. 기본 이메일 앱을 통해 <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;"><strong>${COMPANY_CONFIG.email}</strong></a>로 직접 발송해 주십시오.`
+            : `<strong>Email Client Handoff Ready:</strong> Your inquiry text has been formatted. Opening your default mail application addressed to <a href="mailto:${COMPANY_CONFIG.email}" style="text-decoration:underline;"><strong>${COMPANY_CONFIG.email}</strong></a>.`;
       }
 
       window.location.href = `mailto:${COMPANY_CONFIG.email}?subject=${subject}&body=${encodeURIComponent(body)}`;
