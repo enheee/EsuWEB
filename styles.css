@@ -1174,21 +1174,38 @@ button, input, select, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 68px;
+    min-height: 64px;
+    gap: 6px;
+  }
+
+  .brand-link {
     gap: 8px;
+    min-width: 0;
+  }
+
+  .brand-logo-img {
+    width: 34px;
+    height: 34px;
   }
 
   .brand-main {
-    font-size: 1rem;
+    font-size: 0.86rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   .brand-sub {
     display: none;
   }
 
+  .header-controls {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
   .lang-pill {
-    padding: 4px 7px;
-    font-size: 0.68rem;
+    padding: 4px 6px;
+    font-size: 0.66rem;
   }
 
   .hero-title {
