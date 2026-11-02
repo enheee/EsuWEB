@@ -53,7 +53,7 @@ In the [Vercel Dashboard](https://vercel.com/dashboard), open the **EsuWEB / khu
 | `INQUIRY_TO_EMAIL` | `erkhemsaikhan@khundet-nobilis.mn` | Production, Preview | Verified company recipient email. |
 | `INQUIRY_FROM_EMAIL` | `Khundet Nobilis B2B Desk <inquiries@khundet-nobilis.mn>` | Production, Preview | Verified sender address on `khundet-nobilis.mn`. |
 
-> **Important Safeguard:** If `RESEND_API_KEY` is not set in the environment, `/api/inquiry` returns `HTTP 503 (EMAIL_PROVIDER_NOT_CONFIGURED)` and the frontend displays a localized error message with direct fallback contact details (`erkhemsaikhan@khundet-nobilis.mn` / `+976 9196 0001`). It will **never** display a fake success message.
+> **Important Safeguard:** If `RESEND_API_KEY` is not set in the environment, `/api/inquiry` returns `HTTP 503 (EMAIL_PROVIDER_NOT_CONFIGURED)` and the frontend displays a localized error message with direct fallback contact details (`erkhemsaikhan@khundet-nobilis.mn` / `+976 9912 1811`). It will **never** display a fake success message.
 
 ---
 

@@ -18,7 +18,9 @@ const COMPANY_CONFIG = {
     kr: "초그트자르갈 에르헴사이한 — 영업 이사 (Sales Director)"
   },
   email: "erkhemsaikhan@khundet-nobilis.mn",
-  phone: "+976 9196 0001",
+  phone: "+976 9912 1811",
+  phoneDisplay: "+976 9912 1811",
+  phoneHref: "+97699121811",
   website: "https://khundet-nobilis.mn",
   address: {
     mn: "Улаанбаатар хот, Хан-Уул дүүрэг, 17-р хороо, Монгол Улс",
@@ -513,7 +515,7 @@ function initSharedChrome() {
           <div class="top-notice-links">
             <a href="mailto:${COMPANY_CONFIG.email}">${COMPANY_CONFIG.email}</a>
             <span>|</span>
-            <a href="tel:+97691960001">${COMPANY_CONFIG.phone}</a>
+            <a href="tel:${COMPANY_CONFIG.phoneHref}">${COMPANY_CONFIG.phone}</a>
             <span>|</span>
             <a href="company-profile.html" target="_blank" rel="noopener" data-ui="topProfileLink">Company Profile PDF</a>
           </div>
@@ -600,7 +602,7 @@ function initSharedChrome() {
                 <li><strong style="color: var(--bg-white);">${COMPANY_CONFIG.name}</strong></li>
                 <li data-ui="footerAddress">17th Khoroo, Khan-Uul District, Ulaanbaatar, Mongolia</li>
                 <li><a href="mailto:${COMPANY_CONFIG.email}">${COMPANY_CONFIG.email}</a></li>
-                <li><a href="tel:+97691960001">${COMPANY_CONFIG.phone}</a></li>
+                <li><a href="tel:${COMPANY_CONFIG.phoneHref}">${COMPANY_CONFIG.phone}</a></li>
                 <li><a href="https://khundet-nobilis.mn">www.khundet-nobilis.mn</a></li>
               </ul>
             </div>

@@ -115,9 +115,9 @@ function getLocalizedError(lang, key) {
       kr: "서버 이메일 발송 설정(RESEND_API_KEY)이 아직 완료되지 않아 문의가 자동 발송되지 않았습니다. 아래 공식 이메일 또는 전화번호로 직접 연락해 주시기 바랍니다."
     },
     DELIVERY_FAILED: {
-      mn: "И-мэйл илгээх явцад техникийн алдаа гарлаа. Доорх албан ёсны и-мэйл хаягаар шууд холбогдоно уу.",
-      en: "Unable to deliver the inquiry email due to an upstream mail service error. Please contact us directly at erkhemsaikhan@khundet-nobilis.mn.",
-      kr: "이메일 발송 서버 오류로 인해 문의가 전달되지 않았습니다. 공식 이메일(erkhemsaikhan@khundet-nobilis.mn)로 직접 연락해 주십시오."
+      mn: "И-мэйл илгээх явцад техникийн алдаа гарлаа. Доорх албан ёсны и-мэйл (erkhemsaikhan@khundet-nobilis.mn) эсвэл утсаар (+976 9912 1811) шууд холбогдоно уу.",
+      en: "Unable to deliver the inquiry email due to an upstream mail service error. Please contact us directly at erkhemsaikhan@khundet-nobilis.mn or +976 9912 1811.",
+      kr: "이메일 발송 서버 오류로 인해 문의가 전달되지 않았습니다. 공식 이메일(erkhemsaikhan@khundet-nobilis.mn) 또는 전화(+976 9912 1811)로 직접 연락해 주십시오."
     }
   };
   return messages[key]?.[l] || messages[key]?.en || "Request failed.";
@@ -291,7 +291,7 @@ function buildEmailTemplates(data, submittedAtIso) {
     </tr>
     <tr>
       <td style="padding:14px 28px;background-color:#F6F4EF;border-top:1px solid #EAE6DF;font-size:12px;color:#6E6B65;">
-        Delivered via khundet-nobilis.mn B2B Inquiry System · Reply directly to respond to the sender.
+        Delivered via khundet-nobilis.mn B2B Inquiry System (+976 9912 1811) · Reply directly to respond to the sender.
       </td>
     </tr>
   </table>
