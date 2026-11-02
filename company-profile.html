@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KHUNDET NOBILIS LLC — Company Profile & Market Experience (MN / EN / KR)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <style>
+    :root {
+      --bg-ivory: #F4F1EA;
+      --bg-alabaster: #FAF9F6;
+      --bg-white: #FFFFFF;
+      --text-charcoal: #181715;
+      --text-body: #3D3A35;
+      --text-muted: #757067;
+      --champagne: #B0925A;
+      --line: rgba(24, 23, 21, 0.14);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-ivory);
+      color: var(--text-charcoal);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .toolbar {
+      max-width: 960px;
+      margin: 0 auto 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--bg-white);
+      padding: 14px 24px;
+      border: 1px solid var(--line);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--text-charcoal);
+      background: var(--text-charcoal);
+      color: var(--bg-alabaster);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-charcoal);
+    }
+
+    .sheet {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--bg-white);
+      border: 1px solid var(--line);
+      padding: 56px 64px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+    }
+
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 36px;
+      gap: 24px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-row img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--champagne);
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-sub {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--champagne);
+    }
+
+    .doc-meta {
+      text-align: right;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .section-block {
+      margin-bottom: 36px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .trilingual-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 16px;
+    }
+
+    .lang-col {
+      background: var(--bg-alabaster);
+      border: 1px solid var(--line);
+      padding: 20px;
+      font-size: 0.85rem;
+      color: var(--text-body);
+    }
+
+    .lang-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--champagne);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .two-col-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .item-box {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      background: var(--bg-alabaster);
+    }
+
+    .item-box h4 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .item-box p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .contact-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: var(--text-charcoal);
+      color: var(--bg-alabaster);
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .contact-bar span {
+      display: block;
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 4px;
+    }
+
+    .contact-bar strong {
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 820px) {
+      .sheet {
+        padding: 32px 24px;
+      }
+      .trilingual-grid,
+      .two-col-list,
+      .contact-bar {
+        grid-template-columns: 1fr;
+      }
+      .doc-header {
+        flex-direction: column;
+      }
+      .doc-meta {
+        text-align: left;
+      }
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+      }
+      .toolbar {
+        display: none;
+      }
+      .sheet {
+        border: none;
+        box-shadow: none;
+        padding: 20px;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a href="index.html" class="btn btn-outline">← Back to Website (khundet-nobilis.mn)</a>
+    <div style="display: flex; gap: 10px;">
+      <button type="button" class="btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <article class="sheet">
+    <header class="doc-header">
+      <div class="brand-row">
+        <img src="assets/logo.jpg" alt="Khundet Nobilis LLC Logo" />
+        <div>
+          <div class="brand-title">KHUNDET NOBILIS LLC</div>
+          <div class="brand-sub">GLOBAL BEAUTY &amp; AESTHETIC SOLUTIONS · MONGOLIA</div>
+        </div>
+      </div>
+      <div class="doc-meta">
+        <div><strong>CORPORATE BRIEF &amp; MARKET OVERVIEW</strong></div>
+        <div>Languages: English · 한국어 · Монгол</div>
+        <div>Ulaanbaatar, Mongolia | www.khundet-nobilis.mn</div>
+      </div>
+    </header>
+
+    <!-- 1. EXECUTIVE INTRODUCTION (EN / KR / MN) -->
+    <section class="section-block">
+      <span class="eyebrow">01 / COMPANY INTRODUCTION · 기업 소개 · КОМПАНИЙН ТАНИЛЦУУЛГА</span>
+      <h2>Connecting Global Beauty Innovation with Mongolia</h2>
+
+      <div class="trilingual-grid">
+        <div class="lang-col">
+          <span class="lang-tag">ENGLISH</span>
+          <p>
+            <strong>Khundet Nobilis LLC</strong> is a Mongolia-based company focused on sourcing, introducing, and developing opportunities for international beauty and aesthetic products. Our initial pilot sales of selected Korean products provided practical insight into customer preferences and market acceptance in Ulaanbaatar. Today, we aim to build lasting relationships with manufacturers and develop sustainable distribution channels.
+          </p>
+        </div>
+
+        <div class="lang-col">
+          <span class="lang-tag">한국어 (KOREAN)</span>
+          <p>
+            <strong>Khundet Nobilis LLC(훈데트 노빌리스)</strong>는 몽골 울란바토르를 거점으로 해외 우수 뷰티 및 에스테틱 제품을 발굴·도입하고 시장을 개발하는 기업입니다. 엄선된 한국 제품의 초기 파일럿 판매(Pilot Sales)를 통해 현지 소비자 선호도와 시장 가능성을 확인하였으며, 이를 바탕으로 제조사와의 신뢰 기반 장기 유통 파트너십을 구축하고자 합니다.
+          </p>
+        </div>
+
+        <div class="lang-col">
+          <span class="lang-tag">МОНГОЛ (MONGOLIAN)</span>
+          <p>
+            <strong>«Хүндэт Нобилис» ХХК</strong> нь олон улсын чанартай гоо сайхан, арьс арчилгааны бүтээгдэхүүнийг Монголын зах зээлд нэвтрүүлэх, урт хугацааны түгээлтийн хамтын ажиллагааг хөгжүүлэх зорилготой компани юм. Солонгосын сонгомол бүтээгдэхүүний анхны туршилтын борлуулалтаар зах зээлийн бодит эрэлтийг судлан, олон улсын нийлүүлэгчидтэй хамтын ажиллагаагаа өргөжүүлж байна.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PORTFOLIO FOCUS CATEGORIES -->
+    <section class="section-block">
+      <span class="eyebrow">02 / PORTFOLIO FOCUS · 핵심 취급 분야 · БҮТЭЭГДЭХҮҮНИЙ ЧИГЛЭЛ</span>
+      <h2>Selected Product Categories for a Growing Market</h2>
+      <div class="two-col-list">
+        <div class="item-box">
+          <h4>1. Skincare &amp; Cosmetics (스킨케어 및 코스메틱)</h4>
+          <p>Hydrating serums, barrier-repair creams, calming essences, and daily derma-cosmetic lines suited for Mongolia's dry continental climate.</p>
+        </div>
+        <div class="item-box">
+          <h4>2. Professional Aesthetic Products (프로페셔널 에스테틱)</h4>
+          <p>High-potency ampoules, skin boosters, and post-procedure care solutions tailored for beauty salons and skincare studios.</p>
+        </div>
+        <div class="item-box">
+          <h4>3. Beauty Accessories (뷰티 액세서리 및 소도구)</h4>
+          <p>Facial massage tools, treatment applicators, and complementary skincare accessories for home and studio routines.</p>
+        </div>
+        <div class="item-box">
+          <h4>4. Selected Wellness Products (셀렉티드 웰니스)</h4>
+          <p>Curated beauty-wellness products supporting holistic daily self-care among Mongolian consumers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. OUR MARKET EXPERIENCE & DISTRIBUTION PRIORITIES -->
+    <section class="section-block">
+      <span class="eyebrow">03 / MARKET EXPERIENCE &amp; DEVELOPMENT ROADMAP · 시장 경험 및 유통 개발 과제</span>
+      <h2>From Pilot Sales to Sustainable Distribution</h2>
+      <p style="font-size: 0.9rem; color: var(--text-body); margin-bottom: 16px;">
+        Our journey began with practical pilot sales of selected Korean beauty products in Mongolia, enabling direct assessment of consumer feedback. Building on this foundation, our six distribution development priorities include:
+      </p>
+      <div class="two-col-list">
+        <div class="item-box">
+          <h4>01. International Product Sourcing</h4>
+          <p>해외 우수 제품 소싱 · Олон улсын бүтээгдэхүүн судалгаа, сонголт</p>
+        </div>
+        <div class="item-box">
+          <h4>02. Local Market Research</h4>
+          <p>현지 시장 및 소비자 조사 · Орон нутгийн зах зээлийн судалгаа</p>
+        </div>
+        <div class="item-box">
+          <h4>03. Product Introduction</h4>
+          <p>제품 소개 및 초기 시장 안착 · Бүтээгдэхүүн таниулах үйл ажиллагаа</p>
+        </div>
+        <div class="item-box">
+          <h4>04. Sales Channel Development</h4>
+          <p>온·오프라인 판매 채널 개발 · Борлуулалтын суваг хөгжүүлэлт</p>
+        </div>
+        <div class="item-box">
+          <h4>05. Customer Relationship Management</h4>
+          <p>고객 피드백 및 관계 관리 · Хэрэглэгчийн харилцааны менежмент</p>
+        </div>
+        <div class="item-box">
+          <h4>06. Long-Term Distribution Planning</h4>
+          <p>장기 유통 및 파트너십 설계 · Урт хугацааны түгээлтийн төлөвлөлт</p>
+        </div>
+      </div>
+
+      <div class="contact-bar">
+        <div>
+          <span>COMPANY</span>
+          <strong>KHUNDET NOBILIS LLC</strong>
+        </div>
+        <div>
+          <span>REPRESENTATIVE</span>
+          <strong>Erkhemsaikhan Tsogtjargal (Sales Director)</strong>
+        </div>
+        <div>
+          <span>EMAIL</span>
+          <strong>erkhemsaikhan@khundet-nobilis.mn</strong>
+        </div>
+        <div>
+          <span>PHONE / LOCATION</span>
+          <strong>+976 9196 0001 · Ulaanbaatar</strong>
+        </div>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
